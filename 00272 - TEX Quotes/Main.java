@@ -10,9 +10,18 @@ public class Main {
         ArrayList<String> list = new ArrayList<String>();
 
 
-        while (list.size() <60) {
+        while (list.size() <10) {
 	      list.add(in.next());
       }
+
+      for (int i = 0; i < list.size(); i++) {
+
+        //treba sada pronaci znakove iz unete recenice i gde god da se oni nalaze
+        //zameniti sa onim drugim znakom i preneti u drugu ArrayLis i potom je
+        //istampati
+
+        }
+
 
         for(int i=0; i<list.size(); i++){
           System.out.print(list.get(i) + " ");
