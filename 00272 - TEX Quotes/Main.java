@@ -1,32 +1,25 @@
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.io.BufferedInputStream;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        Scanner in = new Scanner(System.in);
-        //int n = in.nextInt();
-        System.out.println("Unesite recenicu");
+  public static void main(String args[]) throws IOException {
+    BufferedInputStream in = new BufferedInputStream(System.in);
+    int currentChar;
+    boolean provera = false;
 
-        ArrayList<String> list = new ArrayList<String>();
+    while ((currentChar = in.read()) != -1) {
+      if((char)currentChar == '"' && provera==false){
+        System.out.print("``");
+        provera = !provera;
+      } else if ((char)currentChar == '"' && provera==true) {
+            System.out.print("''");
+            provera = !provera;
 
-
-        while (list.size() <10) {
-	      list.add(in.next());
+      } else{
+        System.out.print((char)currentChar);
       }
 
-      for (int i = 0; i < list.size(); i++) {
-
-        //treba sada pronaci znakove iz unete recenice i gde god da se oni nalaze
-        //zameniti sa onim drugim znakom i preneti u drugu ArrayLis i potom je
-        //istampati
-
-        }
-
-
-        for(int i=0; i<list.size(); i++){
-          System.out.print(list.get(i) + " ");
-          }
-
-
     }
+    in.close();
+  }
 }
