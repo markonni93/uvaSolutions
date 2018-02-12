@@ -8,17 +8,17 @@ public class Main {
     boolean provera = false;
 
     while ((currentChar = in.read()) != -1) {
-      if((char)currentChar == '"' && provera==false){
-        System.out.print("``");
+      char c = (char) currentChar;
+      if(c == '"'){
+        if (provera) {
+          System.out.print("''");
+        } else {
+          System.out.print("``");
+        }
         provera = !provera;
-      } else if ((char)currentChar == '"' && provera==true) {
-            System.out.print("''");
-            provera = !provera;
-
       } else{
-        System.out.print((char)currentChar);
+        System.out.print(c);
       }
-
     }
     in.close();
   }
