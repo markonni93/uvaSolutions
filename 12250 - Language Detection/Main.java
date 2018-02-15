@@ -43,7 +43,7 @@ public class Main {
           break;
 
       }
-      System.out.printf("Case %d: %s\n", brojac++, result);
+      System.out.printf("Case %d: %s\n", ++brojac, result);
     }
   }
 }
