@@ -8,22 +8,29 @@ public class Main {
 
     Scanner in = new Scanner(System.in);
 
-    String input;
-    int brojac = 0;
+    int numCase = in.nextInt();
+    int counter = 0;
+    int L;
+    int W;
+    int H;
+    int printCounter = 0;
+    String print = "";
 
-    while (true) {
-      input = in.nextLine();
-      if (input.startsWith("Hajj")) {
-        input = "Hajj-e-Akbar";
-        brojac++;
 
-      } else if (input. startsWith("Umrah")) {
-        input = "Hajj-e-Asghar";
-        brojac++;
-      } else if (input.equals("*")) {
-        break;
-      }
-      System.out.println("Case " + brojac + ": " + input);
+    while(counter < numCase){
+
+    L = in.nextInt();
+    W = in.nextInt();
+    H = in.nextInt();
+
+    if (L <= 20 && W <= 20 && H <= 20) {
+        print = "good";
+    } else if (L > 20 || W > 20 || H > 20) {
+        print = "bad";
+    }
+     printCounter++;
+     System.out.println("Case " + printCounter + ": " + print);
+     counter++;
     }
   }
 }
