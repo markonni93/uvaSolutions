@@ -15,8 +15,6 @@ public class Main {
     int salaryaverage = 0;
     int brojac = 0;
 
-
-
     for(int i = 0; i < caseNum; i++){
       salary1 = in.nextInt();
       salary2 = in.nextInt();
@@ -37,8 +35,6 @@ public class Main {
     }
     System.out.println("Case " + brojac + ": " + salaryaverage);
 
+    }
   }
-
-  }
-
 }
