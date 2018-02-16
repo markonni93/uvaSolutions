@@ -16,26 +16,19 @@ public class Main {
     int parseInput = 0;
     int brojac = 0;
 
-    while(brojac < realNumCase){
+    while (brojac < realNumCase) {
 
-    input = in.nextLine();
+      input = in.nextLine();
 
-    if (input.startsWith("donate")){
+      if (input.startsWith("donate")) {
 
-    input = input.replaceAll("[^\\d.]", "");
-    parseInput = Integer.parseInt(input);
-    report+= parseInput;
-  }  if (input.startsWith("report")){
-      System.out.println(report);
+        input = input.replaceAll("[^\\d.]", "");
+        parseInput = Integer.parseInt(input);
+        report+= parseInput;
+      } if (input.startsWith("report")) {
+        System.out.println(report);
+      }
+      brojac++;
     }
-
-    brojac++;
-
-}
-
-
-
-
-    }
-
   }
+}
