@@ -17,7 +17,7 @@ public class Main {
 
       System.out.println("Lumberjacks:");
 
-      while (counter < numGroup) {
+      while (counter++ < numGroup) {
 
 
 
@@ -28,19 +28,26 @@ public class Main {
       for (int j = 0; j < lumberjackArray.length-1; j++) {
         if (lumberjackArray[j] > lumberjackArray[j+1]) {
           countDescen++;
-      } if (lumberjackArray[j] < lumberjackArray[j+1] )
+      } if (lumberjackArray[j] < lumberjackArray[j+1] ) {
           countAscen++;
       }
 
 
       if(countAscen == 9) {
         System.out.println("Ordered");
+        countAscen = 0;
       } else if (countDescen == 9) {
         System.out.println("Ordered");
-      } else {
+        countDescen = 0;
+      } else if (countAscen != 9 || countDescen != 9){
         System.out.println("Unordered");
       }
-counter++;
+
+
+      break;
+}
+
+
 }
 }
 }
