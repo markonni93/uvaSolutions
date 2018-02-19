@@ -17,20 +17,13 @@ public class Main {
     String print = "";
 
 
-    while(counter < numCase){
+    while(counter++ < numCase){
 
-    L = in.nextInt();
-    W = in.nextInt();
-    H = in.nextInt();
-
-    if (L <= 20 && W <= 20 && H <= 20) {
-        print = "good";
-    } else if (L > 20 || W > 20 || H > 20) {
-        print = "bad";
-    }
-     printCounter++;
-     System.out.println("Case " + printCounter + ": " + print);
-     counter++;
+      L = in.nextInt();
+      W = in.nextInt();
+      H = in.nextInt();
+      
+      System.out.println(print = (L <= 20 && W <= 20 && H <= 20) ? "good" : "bad");
     }
   }
 }
