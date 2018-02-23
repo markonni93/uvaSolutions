@@ -13,27 +13,25 @@ public class Main {
     int lowJumps = 0;
     int highJumps = 0;
     int brojac = 0;
+    int trenutniStub;
+    int sledeciStub;
 
     while (testcase-- > 0) {
       numOfWalls = in.nextInt();
-      int[] height = new int[numOfWalls];
-
-      for (int i = 0; i < height.length; i++) {
-        height[i] = in.nextInt();
-      }
 
       highJumps = 0;
       lowJumps = 0;
 
-      for (int j = 0; j < height.length - 1; j++) {
-        if (height[j] > height[j + 1]) {
+      trenutniStub = in.nextInt();
+
+      for (int i = 1; i < numOfWalls; i++) {
+        sledeciStub = in.nextInt();
+        if (trenutniStub > sledeciStub) {
           lowJumps++;
-        } else if (height[j] < height[j + 1]) {
+        } else if (trenutniStub < sledeciStub) {
           highJumps++;
-        } else if (height[j] == height[j + 1]) {
-          highJumps = highJumps;
-          lowJumps = lowJumps;
         }
+        trenutniStub = sledeciStub;
       }
       brojac++;
       System.out.println("Case " + brojac + ": " + highJumps + " " + lowJumps);

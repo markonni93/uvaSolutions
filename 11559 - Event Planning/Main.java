@@ -23,14 +23,15 @@ public class Main {
 
       while (hotels-- > 0) {
         price = in.nextInt();
-
+        hasFive = null;
         for (int i = 0; i < beds.length; i++) {
           beds[i] = in.nextInt();
           hasFive = IntStream.of(beds).anyMatch(num -> num == 0);
           }
-        if (hasFive == false)
+          if (hasFive == false) {
           provera = numOfPart * price;
         }
+      }
 
       System.out.println(provera);
 
