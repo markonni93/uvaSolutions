@@ -8,41 +8,35 @@ public class Main {
 
     Scanner in = new Scanner(System.in);
 
-    while(true){
+    int testcase = in.nextInt();
+    int numOfWalls;
+    int lowJumps = 0;
+    int highJumps = 0;
+    int brojac = 0;
 
-    int numOfCue = in.nextInt();
+    while (testcase-- > 0) {
+      numOfWalls = in.nextInt();
+      int[] height = new int[numOfWalls];
 
-    if (numOfCue == 0) {
-      break;
+      for (int i = 0; i < height.length; i++) {
+        height[i] = in.nextInt();
+      }
+
+      highJumps = 0;
+      lowJumps = 0;
+
+      for (int j = 0; j < height.length - 1; j++) {
+        if (height[j] > height[j + 1]) {
+          lowJumps++;
+        } else if (height[j] < height[j + 1]) {
+          highJumps++;
+        } else if (height[j] == height[j + 1]) {
+          highJumps = highJumps;
+          lowJumps = lowJumps;
+        }
+      }
+      brojac++;
+      System.out.println("Case " + brojac + ": " + highJumps + " " + lowJumps);
     }
-
-    int counter = 0;
-    int coordinateX;
-    int coordinateY;
-    int divisionX;
-    int divisionY;
-
-    divisionX = in.nextInt();
-    divisionY = in.nextInt();
-
-    while (counter < numOfCue) {
-
-    coordinateX = in.nextInt();
-    coordinateY = in.nextInt();
-
-    if(coordinateX == divisionX || coordinateY == divisionY) {
-      System.out.println("divisa");
-    } else if (coordinateX < divisionX && coordinateY < divisionY) {
-      System.out.println("SO");
-    } else if (coordinateX > divisionX && coordinateY < divisionY) {
-      System.out.println("SE");
-    } else if (coordinateX > divisionX && coordinateY > divisionY) {
-      System.out.println("NE");
-    } else if (coordinateX < divisionX && coordinateY > divisionY) {
-      System.out.println("NO");
-    }
-    counter++;
-   }
   }
- }
 }
