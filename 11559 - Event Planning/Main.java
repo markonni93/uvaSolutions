@@ -8,39 +8,38 @@ import java.util.stream.IntStream;
 
 public class Main {
   public static void main(String args[]) {
+
     Scanner in = new Scanner(System.in);
 
-    //while (in.hasNextLine()) {
+    int numOfParticipants = in.nextInt();
+    int budget = in.nextInt();
+    int numOfHotels = in.nextInt();
+    int numOfWeeks = in.nextInt();
+    int price = 0;
+    int numOfBeds = 0;
+    Boolean check = null;
 
-      int numOfPart = in.nextInt();
-      int budget = in.nextInt();
-      int hotels = in.nextInt();
-      int weeks = in.nextInt();
-      int price = 0;
-      int[] beds = new int[weeks];
-      Boolean hasFive = null;
-      long provera = 0;
+    while (numOfHotels-- > 0) {
+      price = in.nextInt();
 
-      while (hotels-- > 0) {
-        price = in.nextInt();
-        hasFive = null;
+      for (int i = 0; i < numOfWeeks; i++) {
+        numOfBeds = in.nextInt();
+        for (int j = 0; j < numOfWeeks; j++) {
 
-        for (int i = 0; i < beds.length; i++) {
-          beds[i] = in.nextInt();
-          hasFive = IntStream.of(beds).anyMatch(num -> num == 0);
+          check = null;
+          while (numOfBeds-- > 0){
+            if (numOfBeds == 0) {
+              check = false;
+            } else {
+              check = true;
+            }
           }
-          if (hasFive == false && numOfPart * price <= budget) {
-          provera = numOfPart * price;
         }
       }
 
-      System.out.println(provera);
+      System.out.println(numOfBeds);
+    }
 
-      if (provera <= budget && hasFive == false) {
-        System.out.println(provera);
-      } else {
-        System.out.println("stay home");
-      }
+
     }
   }
-//}
