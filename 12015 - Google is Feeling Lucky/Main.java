@@ -11,7 +11,6 @@ public class Main {
     Scanner in = new Scanner(System.in);
 
     int numOfCases = in.nextInt();
-    in.nextLine();
     String[] webAddress = new String[10];
     int[] value = new int[10];
     int max = 0;
@@ -22,11 +21,12 @@ public class Main {
       for (int i = 0; i < webAddress.length; i++) {
         webAddress[i] = in.next();
         value[i] = in.nextInt();
-        in.nextLine();
       }
-
+      max = 0;
       for (int i = 0; i < value.length; i++) {
-        max = Arrays.stream(value).max().getAsInt();
+          if (value[i] > max) {
+            max = value[i];
+          }
         }
 
       whileCounter++;
