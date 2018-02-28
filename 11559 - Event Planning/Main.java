@@ -16,30 +16,28 @@ public class Main {
     int numOfHotels = in.nextInt();
     int numOfWeeks = in.nextInt();
     int price = 0;
-    int numOfBeds = 0;
-    Boolean check = null;
+    int[] numOfBeds = new int[numOfWeeks];
+    int finalPrice = 0;
+    Boolean beds = null;
 
     while (numOfHotels-- > 0) {
       price = in.nextInt();
-
       for (int i = 0; i < numOfWeeks; i++) {
-        numOfBeds = in.nextInt();
-        for (int j = 0; j < numOfWeeks; j++) {
-
-          check = null;
-          while (numOfBeds-- > 0){
-            if (numOfBeds == 0) {
-              check = false;
-            } else {
-              check = true;
-            }
-          }
+        numOfBeds[i] = in.nextInt();
+        if (numOfBeds[i] == 0) {
+          beds = false;
+        } else {
+          beds = true;
         }
       }
-
-      System.out.println(numOfBeds);
-    }
+      finalPrice = price * numOfParticipants;
 
 
+      if (beds = false || finalPrice > budget) {
+        System.out.println("stay home");
+      } else if (beds = true && finalPrice <= budget) {
+        System.out.println(finalPrice);
+      }
     }
   }
+}

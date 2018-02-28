@@ -11,31 +11,36 @@ public class Main {
     Scanner in = new Scanner(System.in);
 
     int numOfCases = in.nextInt();
-    String[] webAddress = new String[10];
-    int[] value = new int[10];
+    Address[] addresses = new Address[10];
     int max = 0;
     int whileCounter = 0;
 
     while (numOfCases-- > 0) {
 
-      for (int i = 0; i < webAddress.length; i++) {
-        webAddress[i] = in.next();
-        value[i] = in.nextInt();
+      for (int i = 0; i < addresses.length; i++) {
+        Address address = new Address();
+        address.webAdress = in.next();
+        address.value = in.nextInt();
+        addresses[i] = address;
       }
       max = 0;
-      for (int i = 0; i < value.length; i++) {
-          if (value[i] > max) {
-            max = value[i];
+      for (int i = 0; i < addresses.length; i++) {
+          if (addresses[i].value > max) {
+            max = addresses[i].value;
           }
         }
 
       whileCounter++;
       System.out.println("Case " + "#" + whileCounter + ":");
-      for (int j = 0; j < value.length; j++) {
-        if (max == value[j]) {
-          System.out.println(webAddress[j]);
+      for (int j = 0; j < addresses.length; j++) {
+        if (max == addresses[j].value) {
+          System.out.println(addresses[j].webAdress);
         }
       }
     }
+  }
+  public static class Address {
+    public String webAdress;
+    public int value;
   }
 }
