@@ -40,7 +40,6 @@ public class Main {
           } else {
             counter += snail.daySnailDistance - snail.nightSnailDistance;
           }
-
           whileCounter++;
 
           if (counter >= height) {

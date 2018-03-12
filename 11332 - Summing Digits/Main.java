@@ -4,32 +4,44 @@ import java.util.Scanner;
 
 
 public class Main {
+
+  static int sumOfDigits(String numberInput) {
+    int digitSum = 0;
+
+    for (int i = 0; i < numberInput.length(); i++) {
+      int digit  = Character.digit(numberInput.charAt(i), 10);
+      digitSum += digit;
+    }
+      return digitSumFinal(digitSum);
+  }
+
+  static int digitSumFinal (int digitSum) {
+    if (digitSum < 10) {
+      return digitSum;
+    } else {
+      int sum = 0;
+      while (digitSum > 0) {
+        sum += digitSum%10;
+        digitSum /= 10;
+      }
+      return digitSumFinal (sum);
+    }
+  }
+
   public static void main(String args[]) {
 
     Scanner in = new Scanner(System.in);
-
-    int sum = 0;
-    int length = 0;
-    int control = 0;
-    Boolean test = true;
+    String numberInput;
 
     while (true) {
+      numberInput = in.nextLine();
 
-      int number = in.nextInt();
-
-      if (number == 0) {
+      if (numberInput.equals("0")) {
         break;
       }
 
-      sum = 0;
-      control = 0;
+      System.out.println(sumOfDigits(numberInput));
 
-      String digits = Integer.toString(number);
-      for (char c: digits.toCharArray()) {
-        sum += c - '0';
-      }
-      System.out.println(sum);
-      //System.out.println(control);
     }
   }
 }
